@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+{% load static %}
+<div class="container ">
+<h1>Objective test question</h1>
+
+ <form method='post' action=''>
+    {% csrf_token %}
+    {% for q  in questions%}
+    <div class="form-group">
+      <label>{{q.question}}</label>
+    </div>
+    <div class="form-check">
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="{{q.op1}}" value="{{q.op1}}" checked>
+            <label class="form-check-label" for="{{q.op1}}">
+                {{q.op1}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="{{q.op2}}" value="{{q.op2}}">
+            <label class="form-check-label" for="{{q.op2}}">
+                {{q.op2}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="{{q.op3}}" value="{{q.op3}}">
+            <label class="form-check-label" for="{{q.op3}}">
+                {{q.op3}}
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="{{q.question}}" id="{{q.op4}}" value="{{q.op4}}">
+            <label class="form-check-label" for="{{q.op4}}">
+                {{q.op4}}
+            </label>
+        </div>
+        <br>
+    </div>
+    {% endfor %}
+    <br>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>
+{% endblock %}
+</body>
+</html>

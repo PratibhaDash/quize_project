@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'main.html' %}
+{% block content %}
+<div class="container ">
+
+    <div class="card-columns" style="padding: 10px; margin: 20px;">
+        <div class="card" align="centre " style="width: 32rem; border:5px blue solid">
+            <div class="card-body">
+                <h4 class="card-title">Score: {{score}}</h4>
+                <p class="card-text">Correct answers: {{correct}}</p>
+                <p class="card-text">Incorrect answers: {{wrong}}</p>
+                <p class="card-text">Total questions: {{total}}</p>
+                <h4>You are successfully completed the Quiz Test</h4>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+</body>
+</html>
